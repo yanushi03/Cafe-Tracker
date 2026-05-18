@@ -1,0 +1,131 @@
+:root {
+  --background: #F7F1E8;
+  --card: #EFE1D1;
+  --primary: #4B2E2A;
+  --secondary: #8A9A5B;
+  --accent: #C9823B;
+  --text: #2B211F;
+  --muted-text: #7A6A5F;
+  --white: #FFFDF8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.app {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+}
+
+/* General text */
+p {
+  color: var(--muted-text);
+}
+
+/* Cards */
+.card,
+.cafe-card {
+  background-color: var(--card);
+  color: var(--text);
+  border: none;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(75, 46, 42, 0.12);
+}
+
+/* Buttons */
+button,
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover,
+.btn-primary:hover {
+  background-color: #3a231f;
+}
+
+/* Secondary buttons */
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--white);
+  border: none;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  background-color: var(--white);
+  color: var(--text);
+  border: 1px solid #d8c8b8;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 130, 59, 0.2);
+}
+
+/* Badges / tags */
+.badge,
+.tag {
+  background-color: var(--secondary);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* NavBar styles */
+.custom-navbar {
+  background-color: var(--primary) !important;
+  padding: 18px 40px;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  text-decoration: none;
+  color: var(--white) !important;
+}
+
+.custom-navbar .nav-link:hover {
+  text-decoration: none;
+  color: var(--accent) !important;
+}

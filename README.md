@@ -29,12 +29,14 @@ Cafe-Tracker/
 │   │   ├── CafeList.tsx          # Grid/list of CafeCards
 │   │   ├── FilterBar.tsx         # Price + distance filters
 │   │   ├── MapView.tsx           # Optional map component
-│   │   ├── Navbar.tsx
+│   │   ├── NavBar.tsx
 │   │   └── DiaryEntry.tsx        # Notes/rating for visited cafes
 │   ├── pages/
 │   │   ├── Discover.tsx          # Main page - nearby cafes
 │   │   ├── MustVisit.tsx         # Saved list
-│   │   └── Visited.tsx           # Visited + diary
+│   │   ├── Visited.tsx           # visited list
+│   │   ├── home.tsx              # home elements
+│   │   └── profile.tsx           # profile info
 │   ├── hooks/
 │   │   ├── useNearby.ts          # Fetches cafes from Google Places
 │   │   └── useLocation.ts        # Gets user's GPS coords
