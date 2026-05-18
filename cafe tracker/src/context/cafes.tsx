@@ -1,18 +1,18 @@
 import { createContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
-import type { Cafe } from "../types/cafe";
+import type { SavedCafe } from "../types/cafe";
 
 interface CafeContextType {
-    cafes: Cafe[];
-    addCafe: (cafe: Cafe) => void;
-    updateCafe: (cafe: Cafe) => void;
-    deleteCafe: (id: number) => void;
+    cafes: SavedCafe[];
+    addCafe: (cafe: SavedCafe) => void;
+    updateCafe: (cafe: SavedCafe) => void;
+    deleteCafe: (id: string) => void;
 }
 
 export const CafeContext = createContext<CafeContextType | undefined>(undefined);
 
 export function CafeProvider({ children }: { children: ReactNode }) {   
-    const [cafes, setCafes] = useState<Cafe[]>(() => {
+    const [cafes, setCafes] = useState<SavedCafe[]>(() => {
         const store = localStorage.getItem('cafes');
         return store ? JSON.parse(store) : [];
     });
@@ -21,16 +21,16 @@ export function CafeProvider({ children }: { children: ReactNode }) {
         localStorage.setItem('cafes', JSON.stringify(cafes));
     }, [cafes]);
 
-    const addCafe = (cafe: Cafe) => {
+    const addCafe = (cafe: SavedCafe) => {
         setCafes(prev => [...prev, cafe]);
     };
 
-    const updateCafe = (updatedCafe: Cafe) => {
-        setCafes(prev => prev.map(cafe => cafe.id === updatedCafe.id ? updatedCafe: cafe));
+    const updateCafe = (updatedCafe: SavedCafe) => {
+        setCafes(prev => prev.map(cafe => cafe.fsq_id === updatedCafe.fsq_id ? updatedCafe: cafe));
     };
 
-    const deleteCafe = (deletedId: number) => {
-        setCafes(prev => prev.filter(cafe => cafe.id !== deletedId));
+    const deleteCafe = (deletedId: string) => {
+        setCafes(prev => prev.filter(cafe => cafe.fsq_id !== deletedId));
     };    
 
     return (

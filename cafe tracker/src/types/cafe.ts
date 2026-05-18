@@ -1,19 +1,33 @@
 export interface Coordinates {
-  lat: number
-  lng: number
+    latitude: number;
+    longitude: number;
+}
+
+export interface Location {
+    address: string;
+    city: string;
+    postcode: string;
+}
+
+export interface Hours {
+    display: string;
+    open_now: boolean;
 }
 
 export interface Cafe {
-    id: number;
+    fsq_id: string;
     name: string;
-    location: string;
-    coordinates: Coordinates;
+    location: Location;
+    geocodes: {
+        main: Coordinates;
+    };
     rating: number;
-    imageUrl: string;
-    openingHours: string;
-    closeTime: string;
-    isOpen: boolean;
-    priceLevel: "$" | "$$" | "$$$";
+    photos: any[];
+    hours: Hours;
+    price: number;
+    description?: string;
+}
+
+export interface SavedCafe extends Cafe {
     vibe: 'chill' | 'work-friendly' | 'lively';
-    description: string;
 }
