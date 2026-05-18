@@ -1,10 +1,11 @@
 import type { Cafe } from "../types/cafe";
 
-const API_BASE_URL = "https://api.foursquare.com/v3/places/search";
+const API_BASE_URL = "/foursquare/places/search";
 const API_KEY = import.meta.env.VITE_FOURSQUARE_API_KEY;
 const HEADERS = {
-    Authorization: API_KEY,
-    "Accept": "application/json"
+    Authorization: `Bearer ${API_KEY}`,
+    Accept: "application/json",
+    "X-Places-Api-Version": "2025-06-17"
 };
 
 export function getCafesByLocation(lat: number, lng: number): Promise<Cafe[]> {
