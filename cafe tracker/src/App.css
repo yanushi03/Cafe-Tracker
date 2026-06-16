@@ -1,131 +1,63 @@
 :root {
-  --background: #F7F1E8;
-  --card: #EFE1D1;
-  --primary: #4B2E2A;
-  --secondary: #8A9A5B;
-  --accent: #C9823B;
-  --text: #2B211F;
-  --muted-text: #7A6A5F;
-  --white: #FFFDF8;
+  --cn-primary: #344526;
+  --cn-primary-container: #4b5d3b;
+  --cn-on-primary: #ffffff;
+  --cn-on-primary-container: #c0d5aa;
+  --cn-primary-fixed-dim: #b8cda3;
+  --cn-surface: #fff8f5;
+  --cn-surface-bright: #fff8f5;
+  --cn-surface-container-lowest: #ffffff;
+  --cn-surface-container-low: #fef1e9;
+  --cn-surface-container: #f8ece4;
+  --cn-surface-container-high: #f2e6de;
+  --cn-surface-dim: #e3d8d0;
+  --cn-on-surface: #201b16;
+  --cn-on-surface-variant: #44483f;
+  --cn-outline-variant: #c5c8bc;
+  --cn-secondary-container: #f4dfcb;
+  --cn-on-secondary-container: #716252;
+  --cn-font-headline: 'Literata', Georgia, serif;
+  --cn-font-body: 'Be Vietnam Pro', system-ui, sans-serif;
 }
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
+html, body {
   margin: 0;
-  background-color: var(--background);
-  color: var(--text);
-  font-family: Inter, system-ui, Arial, sans-serif;
+  padding: 0;
+  background-color: var(--cn-surface);
+  color: var(--cn-on-surface);
+  font-family: var(--cn-font-body);
 }
 
 #root {
-  min-height: 100vh;
-  background-color: var(--background);
+  min-height: 100dvh;
 }
 
-.app {
-  min-height: 100vh;
-  padding: 32px;
+/* Hide scrollbars for horizontal scroll containers */
+.cn-scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+.cn-scroll-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary);
+/* Skeleton pulse animation */
+@keyframes cn-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
-
-/* General text */
-p {
-  color: var(--muted-text);
-}
-
-/* Cards */
-.card,
-.cafe-card {
-  background-color: var(--card);
-  color: var(--text);
-  border: none;
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 8px 24px rgba(75, 46, 42, 0.12);
-}
-
-/* Buttons */
-button,
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--white);
-  border: none;
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:hover,
-.btn-primary:hover {
-  background-color: #3a231f;
-}
-
-/* Secondary buttons */
-.btn-secondary {
-  background-color: var(--secondary);
-  color: var(--white);
-  border: none;
-}
-
-/* Inputs */
-input,
-textarea,
-select {
-  background-color: var(--white);
-  color: var(--text);
-  border: 1px solid #d8c8b8;
+.cn-skeleton {
+  animation: cn-pulse 1.5s ease-in-out infinite;
+  background-color: var(--cn-surface-container-high);
   border-radius: 12px;
-  padding: 10px 14px;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(201, 130, 59, 0.2);
-}
-
-/* Badges / tags */
-.badge,
-.tag {
-  background-color: var(--secondary);
-  color: var(--white);
-  border-radius: 999px;
-  padding: 6px 12px;
-}
-
-/* Links */
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-/* NavBar styles */
-.custom-navbar {
-  background-color: var(--primary) !important;
-  padding: 18px 40px;
-}
-
-.custom-navbar .navbar-brand,
-.custom-navbar .nav-link {
-  text-decoration: none;
-  color: var(--white) !important;
-}
-
-.custom-navbar .nav-link:hover {
-  text-decoration: none;
-  color: var(--accent) !important;
+/* Material Symbols filled variant helper */
+.icon-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
